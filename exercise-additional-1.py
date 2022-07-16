@@ -29,18 +29,25 @@
 
 
 def sumNum(num):
-    NumStr =str(num)
-    Dovgyna = len(NumStr)
-    Sum = num
-    while Dovgyna != 1:
-        Sum = 0
-        for element in NumStr:
-            Sum += int(element)
-        NumStr =str(Sum)
-        Dovgyna = len(NumStr)
-    return Sum
-
-print('38 ->', sumNum(38), sumNum(38) == 2) 
-print('40 ->', sumNum(40), sumNum(40) == 4)
-print('48 ->', sumNum(48), sumNum(48) == 3) 
-print('2 ->', sumNum(2), sumNum(2) == 2) 
+    if (type(num) == int):
+        if (num > 0): 
+            NumStr =str(num)
+            Dovgyna = len(NumStr)
+            Sum = num
+            while Dovgyna != 1:
+                Sum = 0
+                for element in NumStr:
+                    Sum += int(element)
+                NumStr =str(Sum)
+                Dovgyna = len(NumStr)
+            return Sum
+        else:
+            return "Помилка: Від'ємне число!"
+    else:
+        return "Помилка: неправильний тип аргументу!"
+print('-38 ->', sumNum(-38)) 
+print('"38"->', sumNum("38")) 
+print('38 ->', sumNum(38)) 
+print('40 ->', sumNum(40))
+print('48 ->', sumNum(48)) 
+print('2 ->', sumNum(2)) 
